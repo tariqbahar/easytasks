@@ -8,13 +8,14 @@ import {
   output,
   signal,
 } from '@angular/core';
+import { type Users } from './user.model';
 import { DUMMY_USERS } from '../dummy-users';
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-interface Users {
-  id: string;
-  avatar: string;
-  name: string;
-}
+// interface Users {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// }
 @Component({
   selector: 'app-user',
   imports: [],
@@ -23,6 +24,7 @@ interface Users {
 })
 export class User {
   @Input({ required: true }) user!: Users;
+  @Input({ required: true }) selected!: boolean;
   // selectedUser = signal(DUMMY_USERS[randomIndex]);
   // imagePath = computed(() => 'users/' + this.selectedUser().avatar);
   // // get imagePath() {

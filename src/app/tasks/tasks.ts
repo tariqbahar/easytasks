@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 import { required } from '@angular/forms/signals';
-import { Task } from './task/task';
+import { TaskComponents } from './task/task.components';
 
 @Component({
   selector: 'app-tasks',
-  imports: [Task],
+  imports: [TaskComponents],
   templateUrl: './tasks.html',
   styleUrl: './tasks.css',
 })
@@ -36,5 +36,8 @@ export class Tasks {
   ];
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId);
+  }
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
   }
 }
