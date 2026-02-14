@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import { type Users } from './user.model';
 import { DUMMY_USERS } from '../dummy-users';
+import { Card } from '../shared/card/card';
 // const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 // interface Users {
 //   id: string;
@@ -18,7 +19,7 @@ import { DUMMY_USERS } from '../dummy-users';
 // }
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [Card],
   templateUrl: './user.html',
   styleUrl: './user.css',
 })
